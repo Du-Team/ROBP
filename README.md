@@ -58,7 +58,7 @@ pip install python_algorithms
 
 In order to run  ROBP clustering, run the file run_robp.py using python.
 
-The following command line arguments are available for run_bp.py:
+The following command line arguments are available for run_robp.py:
 
 ```
 usage: run_robp.py [-h] --input <file path> --output <file path> [--no-labels]

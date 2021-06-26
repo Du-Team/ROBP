@@ -13,12 +13,9 @@ from sklearn.neighbors import kneighbors_graph
 from sklearn import metrics
 from sklearn import preprocessing
 
-"""
-读取文件开始
-"""
+
 def read_data(filePath, seperator=',', has_labels=True):
     '''
-    开始读文件
     Parameters
     ----------
     filePath
@@ -30,14 +27,14 @@ def read_data(filePath, seperator=',', has_labels=True):
     with open(filePath) as handle:
         data = []
         labels = None
-        if (has_labels):  # 如果有标签，就做个标签列表
+        if (has_labels):
             labels = []
 
         for line in handle:
-            line = line.rstrip()  # 把右边的空格弄掉
+            line = line.rstrip()
             if len(line) == 0:
                 continue
-            line_parts = line.split(seperator)  # 用,分割
+            line_parts = line.split(seperator)
             row = [float(i) for i in line_parts[:len(line_parts) - 1]]
             data.append(row)
             if (has_labels):
@@ -45,10 +42,6 @@ def read_data(filePath, seperator=',', has_labels=True):
                 labels.append(label)
 
         return np.ndarray(shape=(len(data), len(data[0])), buffer=np.array(data)), np.array(labels)
-"""
-读取文件结束
-"""
-
 
 
 # read arff file:
@@ -222,10 +215,6 @@ def draw_clusters3d(X, labels, colors=None, show_plt=True, show_title=False, nam
     return ax
 
 
-
-'''
-------------
-'''
 #
 # def show_clusters(X, labels_true):
 #     X, labels_true = load_from_file_or_data(pathOrData, hasLabels=True)
@@ -451,10 +440,8 @@ def print_dists_statistics(dists):
 def show_dists_stats(data,k=20):
     draw_dist_hist(data)
     draw_knn_dist_hist(data, k)
-'''
-------------------------------------------------------------------------------------------------------------------------
-这应该是个画图的类吧
-'''
+
+
 class DebugPlotSession:
     def __init__(self, output_dir, marker_size=120, line_width=1.5):
         self.current_index = 0
@@ -570,9 +557,7 @@ class DebugPlotSession:
             fig.savefig(file_path, bbox_inches='tight')
         
         plt.close()
-'''
-------------------------------------------------------------------------------------------------------------------------
-'''
+
 
 CLUSTERS_EVALUATION_COLUMNS= [
     "Method",
@@ -727,4 +712,3 @@ class MethodsEvaluation:
                         ["%0.3f"%s for s in score[EvaluationFields.clusters_num.value:]])
         
         return CLUSTERS_EVALUATION_COLUMNS[:], formatted_list
-#聚类工具集合
