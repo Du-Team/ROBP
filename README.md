@@ -8,7 +8,7 @@ A Python implementation of the clustering algorithm presented in:
 
    <b><i> Mingjing Du, Ru Wang, Ru Ji, Xia Wang, Yongquan Dong. ROBP: A robust border-peeling clustering using Cauchy kernel. Information Sciences, 2021, 571: 375-400.</i></b>
 
-The paper is available online at: <a href="https://dumingjing.github.io/publication/2021-ins-robp-dumj/2021-ins-robp-dumj.pdf" target="_blank">pdf</a>. 
+The paper is available online at: <a> href="https://dumingjing.github.io/publication/2021-ins-robp-dumj/2021-ins-robp-dumj.pdf" target="_blank">pdf</a>. 
 
 
 If you use this implementation in your work, please add a reference/citation to the paper. You can use the following bibtex entry:
